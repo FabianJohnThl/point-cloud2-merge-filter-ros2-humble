@@ -11,6 +11,13 @@ import struct
 class PointFusionNodePCL(Node):
     def __init__(self):
         super().__init__('point_fusion_node_pcl')
+        self.get_logger().info(f'Starting point-cloud2-merge-filter-ros2-humble')
+        self.get_logger().info(f'++++++++++++++++++++++++++++++++++++++++++++++')
+        self.get_logger().info(f'https://github.com/FabianJohnThl/point-cloud2-merge-filter-ros2-humble')
+        self.get_logger().info(f'Developed: jpschreiter, FabianJohnTHL')
+        self.get_logger().info(f'License: https://github.com/FabianJohnThl/point-cloud2-merge-filter-ros2-humble/blob/main/LICENSE')
+        self.get_logger().info(f'Cite as: Publicatin pending')
+        self.get_logger().info(f'++++++++++++++++++++++++++++++++++++++++++++++')
 
         # Parameters
         self.declare_parameter('activate_filter', True)                     # Flag to activate/deactivate the filter
@@ -155,13 +162,6 @@ class PointFusionNodePCL(Node):
 
 
 def main(args=None):
-    self.get_logger().info(f'Starting point-cloud2-merge-filter-ros2-humble')
-    self.get_logger().info(f'++++++++++++++++++++++++++++++++++++++++++++++')
-    self.get_logger().info(f'https://github.com/FabianJohnThl/point-cloud2-merge-filter-ros2-humble')
-    self.get_logger().info(f'Developed: jpschreiter, FabianJohnTHL')
-    self.get_logger().info(f'License: https://github.com/FabianJohnThl/point-cloud2-merge-filter-ros2-humble/blob/main/LICENSE')
-    self.get_logger().info(f'Cite as: Publicatin pending')
-    self.get_logger().info(f'++++++++++++++++++++++++++++++++++++++++++++++')
     rclpy.init(args=args)
     node = PointFusionNodePCL()
     rclpy.spin(node)
