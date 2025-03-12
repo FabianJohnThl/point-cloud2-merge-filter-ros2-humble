@@ -10,6 +10,7 @@ This project merges two PointCloud2 messages and apply a filter to downscale the
 # Installation
 
 ```bash
+sudo apt install -y ros-humble-pcl-ros python3-pcl pcl-tools
 cd ~/ros2_ws/src
 sudo rm -r point-cloud2-merge-filter-ros2-humble
 git clone https://github.com/FabianJohnThl/point-cloud2-merge-filter-ros2-humble.git
