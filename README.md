@@ -17,5 +17,5 @@ cd ..
 
 colcon build --packages-select pc_mrg_flt
 source ./install/setup.bash
-ros2 launch pc_mrg_flt launch/pc_mrg_flt_launch.py
+ros2 launch pc_mrg_flt pc_mrg_flt_launch.py
 ```
