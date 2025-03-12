@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>pc_mrg_flt</name>
+  <version>1.0.0</version>
+  <description>This project merges two PointCloud2 messages and apply a filter to downscale the resulting PointCloud2. Developed and tested with Ubuntu 22.04 and ROS2 (humble).</description>
+  <maintainer email="fabian.john@th-luebeck.de">fiveg</maintainer>
+  <license>Apache-2.0</license>
+  
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>pcl</depend>
+  <depend>numpy</depend>
+  <depend>message_filters</depend>
+  <depend>scipy</depend>
+  <depend>struct</depend>
+  <depend>std_msgs</depend>
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
