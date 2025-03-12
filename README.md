@@ -28,7 +28,7 @@ source ./install/setup.bash
 - the script is parametrized via the parameters in the launch file
 
 ```
-'activate_filter': True,        #activation of the filter functionality
+'activate_filter': True,        # activation of the filter functionality
 'voxel_size_lsc': 0.1,          # size of the voxels to apply the voxel-filter
 'outlier_radius': 1.0,          # radius for the outliers in the filter
 'min_neighbors': 20,            # minimal number of points inside the voxel                     
