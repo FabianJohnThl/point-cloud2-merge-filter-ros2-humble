@@ -8,10 +8,10 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='pc_mrg_flt', executable='pc_mrg_flt',
-            remappings=[('cloud_in1', '/livox/lidar_192_168_1_106'), # Map your first input PointCloud to cloud_in1
-                        ('cloud_in2', '/livox/lidar_192_168_1_107'), # Map your second input PointCloud to cloud_in1
-                        ('/livox/lidar', 'cloud_out_merged'),        # Map the merged cloud output to the desired output topic
-                        ('/livox/lidar_f', 'cloud_out_merged_filtered')], # Map the merged and filtered cloud output to the desired output topic
+            remappings=[('/livox/lidar_192_168_1_106', 'cloud_in1'), # Map your first input PointCloud to cloud_in1
+                        ('/livox/lidar_192_168_1_107', 'cloud_in2'), # Map your second input PointCloud to cloud_in1
+                        ('cloud_out_merged', '/livox/lidar'),        # Map the merged cloud output to the desired output topic
+                        ('cloud_out_merged_filtered', '/livox/lidar_f')], # Map the merged and filtered cloud output to the desired output topic
             parameters=[{'activate_filter': True,
                         'voxel_size_lsc': 0.1,                       # size of the voxels to apply the voxel-filter
                         'outlier_radius': 1.0,                       # radius for the outliers in the filter

@@ -21,7 +21,7 @@ class PointFusionNodePCL(Node):
 
         # Parameters
         self.declare_parameter('activate_filter', True)                     # Flag to activate/deactivate the filter
-        self.declare_parameter('voxel_size_lsc', 0.1)                       # size of the voxels to apply the voxel-filter
+        self.declare_parameter('voxel_size', 0.1)                           # size of the voxels to apply the voxel-filter
         self.declare_parameter('outlier_radius', 1.0)                       # radius for the outliers in the filter
         self.declare_parameter('min_neighbors', 20)                         # minimal number of points inside the voxel 
         
@@ -139,11 +139,11 @@ class PointFusionNodePCL(Node):
         
         merged_points = np.vstack([cloud1.to_array(), cloud2.to_array()])
         if self.filter_active:
-            voxel_size = self.get_parameter('voxel_size_lsc').value
+            voxel_size = self.get_parameter('voxel_size').value
             cloud_m_filtered = self.filter_points(merged_points, voxel_size)
             filtered_points = np.vstack([cloud_m_filtered.to_array()])
         else:
-            filtered_points = None
+            filtered_points = merged_points
         
         return (merged_points, filtered_points)
 
