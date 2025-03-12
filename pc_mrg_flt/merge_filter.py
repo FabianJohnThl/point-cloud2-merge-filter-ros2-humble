@@ -135,7 +135,7 @@ class PointFusionNodePCL(Node):
             voxel_size = self.get_parameter('voxel_size_lsc').value
             cloud_m_filtered = self.filter_points(merged_points, voxel_size)
             filtered_points = np.vstack([cloud_m_filtered.to_array()])
-        else
+        else:
             filtered_points = None
         
         return (merged_points, filtered_points)
