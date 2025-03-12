@@ -24,11 +24,6 @@ class PointFusionNodePCL(Node):
         self.declare_parameter('voxel_size', 0.1)                           # size of the voxels to apply the voxel-filter
         self.declare_parameter('outlier_radius', 1.0)                       # radius for the outliers in the filter
         self.declare_parameter('min_neighbors', 20)                         # minimal number of points inside the voxel 
-        
-        self.declare_parameter('cin_1', 'cloud_in1')                        # Name of first cloud to be mergerd and filtered
-        self.declare_parameter('cin_2', 'cloud_in2')                        # Name of second cloud to be mergerd and filtered
-        self.declare_parameter('cout_m', 'cloud_out_merged')                # Name of first cloud to be mergerd and filtered
-        self.declare_parameter('cout_mf', 'cloud_out_merged_filtered')      # Name of second cloud to be mergerd and filtered
 
         # Sensor transform parameters
         self.declare_parameter('sensor1_x', 0.0)
@@ -47,10 +42,10 @@ class PointFusionNodePCL(Node):
 
         # store paremeters in object
         self.filter_active = self.get_parameter('activate_filter').value
-        self.cin1 = self.get_parameter('cin_1').value
-        self.cin2 = self.get_parameter('cin_2').value
-        self.cout_m = self.get_parameter('cout_m').value
-        self.cout_mf = self.get_parameter('cout_mf').value
+        self.cin1 = 'cloud_in1'
+        self.cin2 = 'cloud_in2'
+        self.cout_m = 'cloud_out_merged'
+        self.cout_mf = 'cloud_out_merged_filtered'
 
         # Subscribers and Publishers
         self.pc1_sub = message_filters.Subscriber(self, PointCloud2, self.cin1)

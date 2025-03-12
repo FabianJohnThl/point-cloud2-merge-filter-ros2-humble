@@ -18,6 +18,7 @@ cd ..
 
 colcon build --packages-select pc_mrg_flt
 source ./install/setup.bash
+ros2 launch pc_mrg_flt pc_mrg_flt_launch.py
 ```
 
 # Configuration
@@ -30,7 +31,7 @@ source ./install/setup.bash
 
 ```
 'activate_filter': True,        # activation of the filter functionality
-'voxel_size_lsc': 0.1,          # size of the voxels to apply the voxel-filter
+'voxel_size': 0.1,          # size of the voxels to apply the voxel-filter
 'outlier_radius': 1.0,          # radius for the outliers in the filter
 'min_neighbors': 20,            # minimal number of points inside the voxel                     
 'sensor1_x': 0.0,               # Transformation-Matrix for Sensor 1
